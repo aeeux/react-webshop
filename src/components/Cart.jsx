@@ -25,6 +25,7 @@ const Cart = () => {
       </div>
     );
   };
+
   const cartItems = (product) => {
     return (
       <>
@@ -64,6 +65,7 @@ const Cart = () => {
       </>
     );
   };
+
   const buttons = () => {
     return (
       <>

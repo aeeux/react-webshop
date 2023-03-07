@@ -10,6 +10,7 @@ const Cart = () => {
   const handleAdd = (item) => {
     dispatch(addCart(item));
   };
+
   const handleDel = (item) => {
     dispatch(delCart(item));
   };

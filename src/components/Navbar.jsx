@@ -6,7 +6,7 @@ export default function Navbar() {
   const state = useSelector((state) => state.handleCart);
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-white py-3 shadow-sm">
+      <nav className="navbar navbar-expand-lg bg-white py-3">
         <div className="container">
           <NavLink className="navbar-brand fs-4" to="/">
             LEM🍋NADE.

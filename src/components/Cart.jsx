@@ -33,7 +33,7 @@ const Cart = () => {
         <div className="px-4 my-5 bg-light rounded-3 py-5">
           <div className="container py-4">
             <div className="row justify-content-center">
-              <div className="col-md-4">
+              <div className="col-md-7">
                 <img
                   src={product.filename}
                   alt={product.title}
@@ -41,11 +41,11 @@ const Cart = () => {
                   width="180px"
                 />
               </div>
-              <div className="col-md-4">
+              <div className="col-md-5">
                 <h3>{product.title}</h3>
                 <p className="lead fw-bold">
-                  {product.qty} X ${product.price} = $
-                  {product.qty * product.price}
+                  Quantity: {product.qty}
+                  <p>${(product.qty * product.price).toFixed(2)}</p>
                 </p>
                 <button
                   className="btn btn-outline-dark me-4"
@@ -88,7 +88,6 @@ const Cart = () => {
     <div>
       {state.length === 0 && emptyCart()}
       {state.length !== 0 && state.map(cartItems)}
-      {state.length !== 0 && buttons()}
     </div>
   );
 };

@@ -82,8 +82,8 @@ const Products = () => {
                   />
                   <div className="card-body">
                     <h4 className="text-2xl font-black">{product.name}</h4>
-                    <p className="card-text lead fw-bold my-3">
-                      {product.price}
+                    <p className="card-text lead fw-bold my-3 text-blue-500">
+                      ${product.price}
                     </p>
                     <p className="card-text lead">{product.description}</p>
                     <button

@@ -35,17 +35,18 @@ const Cart = () => {
             <div className="row justify-content-center">
               <div className="col-md-7">
                 <img
-                  src={product.filename}
+                  src={product.image}
                   alt={product.title}
                   height="200px"
                   width="180px"
                 />
               </div>
               <div className="col-md-5">
-                <h3>{product.title}</h3>
+                <h3>{product.name}</h3>
                 <p className="lead fw-bold">
                   Quantity: {product.qty}
                   <p>${(product.qty * product.price).toFixed(2)}</p>
+                  <p>{product.price}</p>
                 </p>
                 <button
                   className="btn btn-outline-dark me-4"

@@ -19,7 +19,7 @@ const Products = () => {
     const getProducts = async () => {
       setLoading(true);
       const response = await fetch(
-        "https://api4286.s3.ap-south-1.amazonaws.com/products.json"
+        "https://my-json-server.typicode.com/aeeux/lyfethree-db/products"
       );
       if (componentMounted) {
         setData(await response.clone().json());
@@ -61,31 +61,13 @@ const Products = () => {
   const ShowProducts = () => {
     return (
       <>
-        <div className="buttons d-flex justify-content-center mb-5 pb-5">
-          <button
-            className="btn btn-outline-dark me-2"
-            onClick={() => setFilter(data)}
-          >
-            All
-          </button>
-          <button
-            className="btn btn-outline-dark me-2"
-            onClick={() => filterProduct("dairy")}
-          >
-            Dairy
-          </button>
-          <button
-            className="btn btn-outline-dark me-2"
-            onClick={() => filterProduct("fruit")}
-          >
-            Fruit
-          </button>
-          <button
-            className="btn btn-outline-dark me-2"
-            onClick={() => filterProduct("vegetable")}
-          >
-            Vegetable
-          </button>
+        <div className="m-12 p-12">
+          <h2 className="text-7xl leading-tight">
+            <span className=" rounded-lg text-8xl font-black">
+              Baji® Lemonade <br />
+            </span>
+            is the modern world's answer for a sustainable drink.
+          </h2>
         </div>
         {filter.map((product) => {
           return (
@@ -93,24 +75,17 @@ const Products = () => {
               <div className="col-md-3 mb-4">
                 <div className="card h-100 text-center p-4" key={product.id}>
                   <img
-                    src={product.filename}
+                    src={product.image}
                     className="card-img-top"
                     alt={product.title}
                     height="250px"
                   />
                   <div className="card-body">
-                    <h4 className="card-title mb-0">
-                      {product.title.substring(0, 12)}
-                    </h4>
+                    <h4 className="card-title mb-0">{product.name}</h4>
                     <p className="card-text lead fw-bold my-3">
-                      ${product.price}
+                      {product.price}
                     </p>
-                    <p className="lead fw-bolder">
-                      Rating: {product.rating} <i className="fa fa-star"></i>{" "}
-                    </p>
-                    <p className="card-text lead">
-                      {product.description.substring(0, 40)}
-                    </p>
+                    <p className="card-text lead">{product.description}</p>
 
                     <button
                       className="btn btn-outline-dark px-4 py-2"

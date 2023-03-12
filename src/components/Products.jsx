@@ -72,7 +72,7 @@ const Products = () => {
         {filter.map((product) => {
           return (
             <>
-              <div className="col-md-3 mb-4">
+              <div className="col-md-4 mb-3">
                 <div className="card h-100 text-center p-4" key={product.id}>
                   <img
                     src={product.image}
@@ -81,14 +81,13 @@ const Products = () => {
                     height="250px"
                   />
                   <div className="card-body">
-                    <h4 className="card-title mb-0">{product.name}</h4>
+                    <h4 className="text-2xl font-black">{product.name}</h4>
                     <p className="card-text lead fw-bold my-3">
                       {product.price}
                     </p>
                     <p className="card-text lead">{product.description}</p>
-
                     <button
-                      className="btn btn-outline-dark px-4 py-2"
+                      className="bg-blue-500 text-white rounded-md px-4 py-2"
                       onClick={() => addProduct(product)}
                     >
                       Add to Cart

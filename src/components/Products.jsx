@@ -66,7 +66,8 @@ const Products = () => {
             <span className=" rounded-lg text-8xl font-black">
               Baji® Lemonade <br />
             </span>
-            is the modern world's answer for a sustainable drink.
+            Quench your thirst with <br />
+            the zesty goodness.🍹
           </h2>
         </div>
         {filter.map((product) => {

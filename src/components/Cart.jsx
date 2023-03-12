@@ -81,7 +81,7 @@ const Cart = () => {
         <div className="container">
           <div>
             <h1 className="text-center py-8 text-xl font-semibold">
-              Total: {getCartTotal().toFixed(2)} DKK
+              Total: ${getCartTotal().toFixed(2)}
             </h1>
             <div className="flex justify-center">
               <button

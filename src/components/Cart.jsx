@@ -15,6 +15,14 @@ const Cart = () => {
     dispatch(delCart(item));
   };
 
+  const getCartTotal = () => {
+    let total = 0;
+    for (let idx = 0; idx < state.length; idx++) {
+      total += state[idx].qty * state[idx].price;
+    }
+    return total;
+  };
+
   const emptyCart = () => {
     return (
       <div className="px-4 my-5 bg-light rounded-3 py-5">
@@ -46,7 +54,6 @@ const Cart = () => {
                 <p className="lead fw-bold">
                   Quantity: {product.qty}
                   <p>${(product.qty * product.price).toFixed(2)}</p>
-                  <p>{product.price}</p>
                 </p>
                 <button
                   className="btn btn-outline-dark me-4"
@@ -68,17 +75,22 @@ const Cart = () => {
     );
   };
 
-  const buttons = () => {
+  const Buttons = () => {
     return (
       <>
         <div className="container">
-          <div className="row">
-            <NavLink
-              to="/checkout"
-              className="btn btn-outline-dark mb-5 w-25 mx-auto"
-            >
-              Proceed to Checkout
-            </NavLink>
+          <div>
+            <h1 className="text-center py-8 text-xl font-semibold">
+              Total: {getCartTotal()} DKK
+            </h1>
+            <div className="flex justify-center">
+              <button
+                type="button"
+                class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700"
+              >
+                Checkout
+              </button>
+            </div>
           </div>
         </div>
       </>
@@ -89,6 +101,7 @@ const Cart = () => {
     <div>
       {state.length === 0 && emptyCart()}
       {state.length !== 0 && state.map(cartItems)}
+      {state.length !== 0 && <Buttons />}
     </div>
   );
 };
